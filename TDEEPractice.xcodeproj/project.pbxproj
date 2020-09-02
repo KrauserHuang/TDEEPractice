@@ -13,6 +13,7 @@
 		4FB9393E24FCECD40091F553 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FB9393C24FCECD40091F553 /* Main.storyboard */; };
 		4FB9394024FCECD70091F553 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FB9393F24FCECD70091F553 /* Assets.xcassets */; };
 		4FB9394324FCECD70091F553 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FB9394124FCECD70091F553 /* LaunchScreen.storyboard */; };
+		4FB9394B24FCF3130091F553 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9394A24FCF3130091F553 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4FB9393F24FCECD70091F553 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FB9394224FCECD70091F553 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FB9394424FCECD70091F553 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FB9394A24FCF3130091F553 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				4FB9393824FCECD40091F553 /* SceneDelegate.swift */,
 				4FB9393A24FCECD40091F553 /* ViewController.swift */,
 				4FB9393C24FCECD40091F553 /* Main.storyboard */,
+				4FB9394A24FCF3130091F553 /* ResultViewController.swift */,
 				4FB9393F24FCECD70091F553 /* Assets.xcassets */,
 				4FB9394124FCECD70091F553 /* LaunchScreen.storyboard */,
 				4FB9394424FCECD70091F553 /* Info.plist */,
@@ -94,7 +97,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Tai Chin Huang";
 				TargetAttributes = {
 					4FB9393224FCECD40091F553 = {
@@ -141,6 +144,7 @@
 				4FB9393B24FCECD40091F553 /* ViewController.swift in Sources */,
 				4FB9393724FCECD40091F553 /* AppDelegate.swift in Sources */,
 				4FB9393924FCECD40091F553 /* SceneDelegate.swift in Sources */,
+				4FB9394B24FCF3130091F553 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +196,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -252,6 +257,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
