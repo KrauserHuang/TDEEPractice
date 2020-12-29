@@ -18,11 +18,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var weightTextField: UITextField!
     //Display activity text from activityPickerView
     @IBOutlet weak var activityButtonText: UIButton!
-    //Display warning label if not fill all the parameter
-    @IBOutlet weak var warningLabel: UILabel!
-    //Show result of your BMR/TDEE
-    @IBOutlet weak var bmrLabel: UILabel!
-    @IBOutlet weak var tdeeLabel: UILabel!
     //Merge activityPickerView & doneButton into activitySelectView
     @IBOutlet weak var activitySelectView: UIView!
     @IBOutlet weak var activityPickerView: UIPickerView!
@@ -34,7 +29,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     //Array for activityPickerView
     let exercise = ["Sedentary(office job)","Light Exercise(1-2 days/week)","Moderate Exercise(3-5 days/week)","Heavy Exercise(6-7 days/week)","Athlete(2x per day)"]
-//    let exercise = ["Sedentary","Light Exercise","Moderate Exercise","Heavy Exercise","Athlete"]
+    
+//    struct BmrInfo {
+//        var sex: String
+//        var age: String
+//        var height: String
+//        var weight: String
+//        var activitySelection: String
+//    }
         
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -63,50 +65,33 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         //Hide activitySelectView & warningLabel when first loading view
         if activitySelectView.isHidden == false {
             activitySelectView.isHidden = true
-            warningLabel.isHidden = true
             }
             view.endEditing(true)
     }
-    @IBAction func calculateButton(_ sender: Any) {
-        view.endEditing(true)
-        if let sex = sexSegmented.titleForSegment(at: sexSegmented.selectedSegmentIndex), let height = heightTextField.text, let weight = weightTextField.text, let age = ageTextField.text, let activitySelection = activityButtonText.titleLabel?.text{
-            var demandCalories : Int?
-            var BMR : Double?
-            if weight != "",height != "",age != ""{
-                if sex == "Male"{
-                    //Male formula
-                    BMR = 10 * Double(weight)! + 6.25 * Double(height)! - 5 * Double(age)! + 5
-                } else {
-                    //Female formula
-                    BMR = 10 * Double(weight)! + 6.25 * Double(height)! - 5 * Double(age)! - 161
-                }
-                //TDEE result with each activitySelection
-                switch activitySelection {
-                case "Sedentary(office job)" :
-                    demandCalories = Int(BMR! * 1.2)
-                case "Light Exercise(1-2 days/week)" :
-                    demandCalories = Int(BMR! * 1.375)
-                case "Moderate Exercise(3-5 days/week)" :
-                    demandCalories = Int(BMR! * 1.55)
-                case "Heavy Exercise(6-7 days/week)" :
-                    demandCalories = Int(BMR! * 1.725)
-                case "Athlete(2x per day)":
-                    demandCalories = Int(BMR! * 1.9)
-                default :
-                    warningLabel.isHidden = false
-                }
-                if let demandCalories = demandCalories {
-                    bmrLabel.text = "\(Int(BMR!)) Cal"
-                    tdeeLabel.text = "\(demandCalories) Cal"
-                    warningLabel.isHidden = true
-                }
-            } else {
-                warningLabel.isHidden = false
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if ageTextField.text?.isEmpty == false,
+           heightTextField.text?.isEmpty == false,
+           weightTextField.text?.isEmpty == false,
+           activityButtonText.titleLabel?.text?.isEmpty == false {
+            return true
+        } else {
+            let controller = UIAlertController(title: "Please fill in all the blank", message: "You need to fill all the blank to calculate your BMR & TDEE", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            controller.addAction(okAction)
+            present(controller, animated: true, completion: nil)
+            return false
             }
-            
-        }
     }
     
-
+    @IBSegueAction func showResult(_ coder: NSCoder) -> ResultViewController? {
+        let sex = sexSegmented.titleForSegment(at: sexSegmented.selectedSegmentIndex) ?? "Male"
+        let age = ageTextField.text!
+        let height = heightTextField.text!
+        let weight = weightTextField.text!
+        let activitySelection = activityButtonText.titleLabel?.text ?? "Sedentary(office job)"
+        let controller = ResultViewController(coder: coder)
+        controller?.bmrInfo = BmrInfo(sex: sex, age: age, height: height, weight: weight, activitySelection: activitySelection)
+        return controller
+    }
 }
-

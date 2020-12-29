@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F2089D02574FC7C0007C00C /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2089CF2574FC7C0007C00C /* ExerciseViewController.swift */; };
+		4FB79A132578E533003293FF /* BmrInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB79A122578E533003293FF /* BmrInfo.swift */; };
 		4FB9393724FCECD40091F553 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9393624FCECD40091F553 /* AppDelegate.swift */; };
 		4FB9393924FCECD40091F553 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9393824FCECD40091F553 /* SceneDelegate.swift */; };
 		4FB9393B24FCECD40091F553 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9393A24FCECD40091F553 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F2089CF2574FC7C0007C00C /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		4FB79A122578E533003293FF /* BmrInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmrInfo.swift; sourceTree = "<group>"; };
 		4FB9393324FCECD40091F553 /* TDEEPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDEEPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FB9393624FCECD40091F553 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FB9393824FCECD40091F553 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +65,9 @@
 				4FB9393624FCECD40091F553 /* AppDelegate.swift */,
 				4FB9393824FCECD40091F553 /* SceneDelegate.swift */,
 				4FB9393A24FCECD40091F553 /* ViewController.swift */,
+				4FB79A122578E533003293FF /* BmrInfo.swift */,
 				4FB9393C24FCECD40091F553 /* Main.storyboard */,
+				4F2089CF2574FC7C0007C00C /* ExerciseViewController.swift */,
 				4FB9394A24FCF3130091F553 /* ResultViewController.swift */,
 				4FB9393F24FCECD70091F553 /* Assets.xcassets */,
 				4FB9394124FCECD70091F553 /* LaunchScreen.storyboard */,
@@ -142,9 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FB9393B24FCECD40091F553 /* ViewController.swift in Sources */,
+				4F2089D02574FC7C0007C00C /* ExerciseViewController.swift in Sources */,
 				4FB9393724FCECD40091F553 /* AppDelegate.swift in Sources */,
 				4FB9393924FCECD40091F553 /* SceneDelegate.swift in Sources */,
 				4FB9394B24FCF3130091F553 /* ResultViewController.swift in Sources */,
+				4FB79A132578E533003293FF /* BmrInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
